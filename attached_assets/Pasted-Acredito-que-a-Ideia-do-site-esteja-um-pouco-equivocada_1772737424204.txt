@@ -1,0 +1,20 @@
+Acredito que a Ideia do site esteja um pouco equivocada
+A ideia que o usuario posso inserir as suas contas, para registro e acompanhamento dele apenas.
+Neste momento ele vai informar se a conta dele esta conectada a ULTIMATE, ou a ALAVANCADA (Ou alguma outra estrategia que eu crie futuramente)
+O Usuario Admin tambem vai informar os resultados de CDI (Renda Fixa) mês a mês, para que o usuario possa ver um gráfico comparativo do rendimento dele, em comparação ao CDI.
+Não vi estes dados para serem preenchidos no mes a mes (nem das estrategias nem da renda fixa.
+Tambem não localizei os graficos para o usuario
+A coluna navigation ainda está em Ingles
+Em resumo, trás tres campos, Lucro, Prejuizo, Liquido, gostaria mais se fosse o grafico que informei antes (Comparando o resultado da estrategia dele, com a renda fixa.
+Em contas, não tem a opção do usuario adicionar a sua conta, ele deve adicionar Conta (só numeros) Data de aceitação no Copy (Essa data vai ser usada para calcular quanto ele fez de lucro) Depósito, em dolares
+
+Ou seja:
+O cliente acesso, cria sua conta na area de membros, e confirma o email. após a confirmação do email libera o acesso para que ele acesse a area de membros>Acessada area de mebros ele cadastra as contas do MT4 ou MT5 dele, informa qual a estrategia ele se conectou, a data que ele se conectou, o valor que ele depositou, a data em que o copy dele foi aprovado.
+
+A partir dai, o site tem que calcular o deposito dele, e os resultados que vou cadastrar Exemplo:
+
+Ele depositou 100 dolares em janeiro, e eu alimentei o site com a informação de que janeiro teve um resultado de +10%
+Para o usuario tem que constar que o valor APROXIMADO do deposito dele é de 110 dolares
+E no grafico tem que colocar 110 na estrategia x, e 101 em renda fixa (supondo que eu tivesse informado renda fixa 1% de rentabilidade)
+
+Além disso, gostaria de uma aba "calculadora", para que usuario possa especular "se eu tivesse depositado 10.000 (por exemplo) 1 ano atras, como seria na: Estrategia x, na estrategia y, sempre comparando com os dados de renda fixa e com os dados das estrategias, que o usuario admin for alimentando

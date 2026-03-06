@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1772738866552,
+      "tag": "0000_dizzy_newton_destine",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1772739027639,
+      "tag": "0001_fantastic_bucky",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1772739702874,
+      "tag": "0002_freezing_doctor_doom",
+      "breakpoints": true
+    }
+  ]
+}

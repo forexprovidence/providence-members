@@ -1,0 +1,69 @@
+You are working on an existing full-stack web application.
+Do NOT rewrite the project from scratch.
+Analyze the current structure and extend it.
+
+GOALS:
+This is a members-only dashboard for Providence Forex.
+
+REQUIREMENTS TO IMPLEMENT:
+
+1. AUTHENTICATION & EMAILS
+- Implement email confirmation after user registration.
+- User must not access the dashboard until email is confirmed.
+- Implement password recovery via email (forgot password flow).
+- Use a real email-sending solution (SMTP or transactional email).
+- Store confirmation and reset tokens securely with expiration.
+
+2. ADMIN USER (MANDATORY)
+- Seed the database with an initial admin user:
+  Email: Forexprovidence@gmail.com
+  Password: ProvidenceAdmin!@#123
+- Password must be hashed.
+- Admin must have elevated permissions.
+
+3. ADMIN PERMISSIONS
+- Admin can:
+  - View all users
+  - Edit any user data
+  - Reset user passwords manually
+  - Edit all financial histories
+  - Edit all strategies
+  - Edit all accounts
+
+4. STRATEGIES & FINANCIAL LOGIC
+- Each user account must be linked to a strategy.
+- Each strategy has a historical performance dataset.
+- The dashboard must calculate:
+  - Profit
+  - Loss
+  - Net result
+  based on the strategy history linked to the account.
+- Calculations must be automatic and consistent.
+
+5. FULL CRUD
+- Admin must be able to:
+  - Create, edit, and delete strategies
+  - Create, edit, and delete historical data
+  - Edit any financial record
+- Changes must immediately reflect in user dashboards.
+
+6. SECURITY
+- Protect admin routes.
+- Non-admin users must not access admin features.
+- Validate all inputs.
+
+CONSTRAINTS:
+- Do NOT remove existing structure unless necessary.
+- Extend the current database schema using migrations.
+- Clearly document:
+  - where email logic lives
+  - where admin logic lives
+  - where financial calculations are implemented
+
+DELIVERABLES:
+- Working email confirmation
+- Working password recovery
+- Working admin panel
+- Seeded admin user
+- Automatic profit/loss calculation
+- Clear comments explaining changes
