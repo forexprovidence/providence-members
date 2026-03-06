@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500,600,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================
+   Providence Forex — Dark Pro
+   =========================== */
+
+:root {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+
+  /* Dark mode by default (professional) */
+  --background: 222 35% 7%;
+  --foreground: 210 40% 98%;
+
+  --card: 222 34% 10%;
+  --card-foreground: 210 40% 98%;
+  --card-border: 220 22% 22%;
+
+  --popover: 222 34% 9%;
+  --popover-foreground: 210 40% 98%;
+  --popover-border: 220 22% 22%;
+
+  --border: 220 22% 20%;
+  --input: 220 20% 26%;
+  --ring: 190 92% 54%;
+
+  /* Brand: deep night + strong gold primary */
+  --primary: 44 96% 58%; 
+  --primary-foreground: 222 40% 8%;
+  --secondary: 220 20% 14%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 222 18% 14%;
+  --muted-foreground: 215 18% 72%;
+
+  --accent: 44 96% 45%; /* Darker gold for accent */
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  /* Sidebar tokens (shadcn sidebar) */
+  --sidebar: 222 35% 8%;
+  --sidebar-foreground: 210 40% 96%;
+  --sidebar-border: 220 22% 18%;
+  --sidebar-primary: 190 92% 54%;
+  --sidebar-primary-foreground: 222 40% 8%;
+  --sidebar-accent: 220 18% 14%;
+  --sidebar-accent-foreground: 210 40% 98%;
+  --sidebar-ring: 190 92% 54%;
+
+  /* Shadcn elevate system helpers (already referenced in existing CSS) */
+  --button-outline: rgba(255, 255, 255, 0.12);
+  --badge-outline: rgba(255, 255, 255, 0.08);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255, 255, 255, 0.04);
+  --elevate-2: rgba(255, 255, 255, 0.08);
+
+  --radius: 0.8rem;
+
+  /* Charts */
+  --chart-1: 190 92% 54%;
+  --chart-2: 44 96% 58%;
+  --chart-3: 154 72% 52%;
+  --chart-4: 280 78% 64%;
+  --chart-5: 12 92% 64%;
+}
+
+.dark {
+  /* Keep same (dark-first), but allow .dark to exist */
+  --background: 222 35% 7%;
+  --foreground: 210 40% 98%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight;
+  }
+}
+
+/* Premium selection */
+::selection {
+  background: hsl(var(--primary) / 0.25);
+}
+
+/* Subtle grid + vignette background texture */
+.prov-bg {
+  background:
+    radial-gradient(1200px 600px at 20% -10%, hsl(var(--primary) / 0.18), transparent 60%),
+    radial-gradient(900px 500px at 80% 10%, hsl(var(--accent) / 0.14), transparent 55%),
+    radial-gradient(900px 600px at 50% 110%, rgba(255, 255, 255, 0.06), transparent 60%),
+    linear-gradient(to bottom, hsl(var(--background)), hsl(var(--background)));
+  position: relative;
+}
+
+.prov-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 42px 42px;
+  opacity: 0.22;
+  mask-image: radial-gradient(700px 420px at 30% 20%, black 40%, transparent 75%);
+}
+
+/* Grain overlay for depth */
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E");
+  border-radius: inherit;
+}
+
+/* Motion */
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(40%);
+  }
+}
+
+.animate-float-in {
+  animation: floatIn 700ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.03)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(10px);
+  }
+
+  .ring-premium {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.10),
+      0 20px 60px rgba(0, 0, 0, 0.55);
+  }
+
+  .shadow-lift {
+    box-shadow:
+      0 24px 70px rgba(0, 0, 0, 0.55),
+      0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  }
+
+  .btn-sheen {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-sheen::after {
+    content: "";
+    position: absolute;
+    top: -30%;
+    bottom: -30%;
+    left: -60%;
+    width: 70%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.18),
+      transparent
+    );
+    transform: skewX(-20deg);
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+  .btn-sheen:hover::after {
+    opacity: 1;
+    animation: shimmer 900ms ease;
+  }
+}
